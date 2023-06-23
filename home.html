@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Weather Forecasting</title>
+</head>
+
+<body>
+    <div class="form">
+        <input type="text" id="city" placeholder="Enter a city name">
+        <button type="submit" id="submit">Search</button>
+    </div>
+    <div id="message"></div>
+    <div class="box" id="box">
+        <div class="wave one"></div>
+        <div class="wave two"></div>
+        <div class="wave three"></div>
+        <div id="weathericon"></div>
+        <div class="info">
+            <h2 class="location"><i class="fa-solid fa-street-view"></i><span id="spanLocation"></span></h2>
+            <p id="date"></p>
+            <h1 id="temp"></h1>
+            <h3 id="rangetemp"></h3>
+        </div>
+    </div>
+    <script src="home.js"></script>
+</body>
+
+</html>

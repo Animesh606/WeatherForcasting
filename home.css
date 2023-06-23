@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+html, body {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 15vh;
+    margin: auto;
+    background-color: rgb(13, 154, 214);
+    padding: 2rem;
+    border-radius: 1rem;
+    align-items: center;
+}
+.form input {
+    margin-top: 5%;
+    width: 80%;
+    height: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+.form button {
+    margin-top: auto;
+    background-color: blue;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 2rem;
+    width: 50%;
+}
+
+#message {
+    color: red;
+    font-size: 3rem;
+    position: absolute;
+    top: 10%;
+}
+
+.box{
+    width: 20vw;
+    height: 60vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+    background-color: aquamarine;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    min-width: 20rem;
+    min-height: 35rem;
+    display: none;
+}
+.wave {
+    opacity: 0.3;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    background-color: white;
+    width: 50rem;
+    height: 50rem;
+    margin-left: -25rem;
+    margin-top: -25rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    z-index: 1;
+}
+.three {
+    animation: drift 5000ms infinite linear;
+    z-index: 2;
+    opacity: 0.2;
+}
+.two {
+    animation: drift 7000ms infinite linear;
+    z-index: 3;
+    opacity: 0.1;
+}
+.box::after{
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0,0,0);
+}
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    z-index: 4;
+}
+.location {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2rem;
+}
+.fa-street-view {
+    animation: rotates 3s linear alternate;
+}
+@keyframes rotates {
+    from {
+        transform: translateX(-0.5rem);
+    }
+    to {
+        transform: translateX(0.5rem);
+    }
+}
+#date {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: rgb(108, 136, 152);
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+#temp {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 2rem;
+}
+#rangetemp {
+    text-align: center;
+    margin-top: 0.3rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: rgb(43, 79, 81);
+}
+#weathericon {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: rgb(255, 255, 21);
+}
+#icon {
+    font-size: 6rem;
+    animation: fas-anime 3s linear infinite alternate;
+}
+@keyframes fas-anime {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        width: 90vw;
+        height: 80vh;
+    }
+}
