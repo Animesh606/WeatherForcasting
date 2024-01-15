@@ -13,13 +13,13 @@ app.get("/",(req, res) => {
         res.status(200).render("home")
     }
 )
-app.get("/home.css",(req,res)=>{
-    res.status(200).render("home.css");
-})
+// app.get("/home.css",(req,res)=>{
+//     res.status(200).render("home.css");
+// })
 
-app.get("/home.js",(req,res)=>{
-    res.status(200).render("home.js")
-})
+// app.get("/home.js",(req,res)=>{
+//     res.status(200).render("home.js")
+// })
 
 app.use((req,res,next)=>{
     res.send('<h1> Error 404 <\h1>');
