@@ -1,31 +1,28 @@
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 // https://api.openweathermap.org/data/2.5/weather?q=ghatal&appid=ed933036b1742e5819eb041550a0d671
-const http = require('http');
-const fs = require('fs');
+const express = require("express");
+const ejs = require("ejs");
+
+const app = express();
+
+app.set("view engine" , "ejs");
+app.use(express.static(__dirname + '/public'));
+
 const port = process.env.port || 8000;
-const server = http.createServer((req, res) => {
-    if (req.url == '/') {
-        fs.readFile('home.html', (err, data) => {
-            res.writeHead(200, {'Content-Type': 'text/html'});
-            res.write(data);
-            res.end();
-        })
+app.get("/",(req, res) => {
+        res.status(200).render("home")
     }
-    else if(req.url == '/home.css'){
-        fs.readFile('home.css', (err, data)=>{
-            res.writeHeader(200, {'Content-Type': 'text/css'});
-            res.write(data);
-            res.end();
-        });  
-    }
-    else if(req.url == '/home.js') {
-        fs.readFile('home.js', (err, data) => {
-            res.writeHead(200, {'Content-Type': 'text/js'});
-            res.write(data);
-            res.end();
-        })
-    }
-    else
-        res.end('<h1> Error 404 <\h1>');
-});
-server.listen(port, "127.0.0.1");
+)
+app.get("/home.css",(req,res)=>{
+    res.status(200).render("home.css");
+})
+
+app.get("/home.js",(req,res)=>{
+    res.status(200).render("home.js")
+})
+
+app.use((req,res,next)=>{
+    res.send('<h1> Error 404 <\h1>');
+})
+
+app.listen(port, "127.0.0.1");
