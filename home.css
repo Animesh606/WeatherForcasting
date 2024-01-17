@@ -15,6 +15,19 @@ html, body {
     font-size: 62.5%;
     height: 100%;
 }
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    font-size: 1.4rem;
+}
+header img {
+    width: 60px; /* Adjust the width to make the image smaller */
+    height: auto;
+    margin-right: 10px;
+}
 
 .form {
     display: flex;
