@@ -15,6 +15,22 @@ html, body {
     font-size: 62.5%;
     height: 100%;
 }
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 1.5rem; /* Adjust the padding to increase the height */
+    text-align: center;
+    width: 100%; /* Make the header fill the entire width */
+    box-sizing: border-box; /* Include padding in the total width */
+    line-height: 2; /* Adjust the line-height for vertical centering */
+    font-size: 1.8rem; /* Adjust the font size for the header text */
+}
+
+header img {
+    width: 60px; /* Adjust the width to make the image smaller */
+    height: auto;
+    margin-right: 10px;
+}
 
 .form {
     display: flex;
