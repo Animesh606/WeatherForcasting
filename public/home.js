@@ -1,3 +1,4 @@
+
 const getinfo = async () => {
     const cityVal = city.value;
     if(cityVal == '') {
@@ -15,25 +16,48 @@ const getinfo = async () => {
             box.style.display = 'block';
             message.innerText = '';
             const weather = objdata.weather[0].main;
+            let videoBtn = document.querySelector('video');
             if(weather == 'Clouds') {
                 weathericon.innerHTML = `<i class="fa-solid fa-cloud fa-beat" style="color : black"></i>`;
+                videoBtn.setAttribute('src' , 'Cloudy.mp4');
             }
             else if(weather == 'Rain') {
                 weathericon.innerHTML = `<i class="fa-solid fa-cloud-showers-heavy fa-beat" style="color : black"></i>`;
+                videoBtn.setAttribute('src' , 'rain.mp4');
+                spanLocation.style.color = "white";
+                temp.style.color = "white";
+                date.style.color = "white";
+                rangetemp.style.color = "white";
             }
             else if(weather == 'Haze' || weather == 'Mist') {
                 weathericon.innerHTML = `<i class="fa-solid fa-smog fa-beat" style="color : white"></i>`;
+                videoBtn.setAttribute('src' , 'Haze.mp4');
+                spanLocation.style.color = "white";
+                temp.style.color = "white";
+                date.style.color = "white";
+                rangetemp.style.color = "white";
             }
             else if(weather == 'Thunderstorm') {
                 weathericon.innerHTML = `<i class="fa-solid fa-cloud-bolt fa-beat" style="color : black"></i>`;
+                videoBtn.setAttribute('src' , 'Thunderstorm.mp4');
+                spanLocation.style.color = "white";
+                temp.style.color = "white";
+                date.style.color = "white";
+                rangetemp.style.color = "white";
             }
             else {
                 weathericon.innerHTML = `<i class='fa-solid fa-sun fa-beat'></i>`;
+                videoBtn.setAttribute('src' , 'Sunny.mp4');
+                spanLocation.style.color = "black";
+                temp.style.color = "black";
+                date.style.color = "black";
+                rangetemp.style.color = "black";
             }
 
         } catch (error) {
-            message.innerText = "Enter valid city name";
+            message.innerText = "Enter valid city name !";
             box.style.display = 'none';
+            message.style.color = "white";
         }
     }
 }

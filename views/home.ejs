@@ -4,35 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="icon" type="image/png" href="/weather-forecast.png">
+    <link rel="icon" type="image/png" href="/weather-forecast.png">
     <title>Weather Forecasting</title>
 </head>
 
 <body>
-    <header>
-        <img src="/weather-forecast.png" alt="Weather Forecast Logo">
-        <h1>Weather Forecast</h1>
-    </header>
-
-    <div class="form">
-        <input type="text" id="city" placeholder="Enter a city name">
-        <button type="submit" id="submit">Search</button>
-    </div>
-    <div id="message"></div>
-    <div class="box" id="box">
-        <div class="wave one"></div>
-        <div class="wave two"></div>
-        <div class="wave three"></div>
-        <div id="weathericon"></div>
-        <div class="info">
-            <h2 class="location"><i class="fa-solid fa-street-view"></i><span id="spanLocation"></span></h2>
-            <p id="date"></p>
-            <h1 id="temp"></h1>
-            <h3 id="rangetemp"></h3>
+    <div class="main-container">
+        <video src="rain.mp4" autoplay muted loop></video>
+        <div class="container">
+            <div class="heading-container">
+                <div class="image-container">
+                    <img src="/weather-forecast.png" alt="Weather Forecast Logo">
+                </div>
+                <div class="desc-container">
+                    <span>Weather Forecast</span>
+                </div>
+            </div>
+            <div class="app-container">
+                <div id="message"></div>
+                <div class="box" id="box">
+                    <div class="wave one"></div>
+                    <div class="wave two"></div>
+                    <div class="wave three"></div>
+                    <div id="weathericon"></div>
+                    <div class="info">
+                        <h2 class="location"><i class="fa-solid fa-street-view"></i><span id="spanLocation"></span></h2>
+                        <p id="date"></p>
+                        <h1 id="temp"></h1>
+                        <h3 id="rangetemp"></h3>
+                    </div>
+                </div>
+                <div class="form">
+                    <input type="text" id="city" placeholder="Enter a city name">
+                    <button type="submit" id="submit">Search</button>
+                </div>  
+            </div>
         </div>
     </div>
     <script src="home.js"></script>
