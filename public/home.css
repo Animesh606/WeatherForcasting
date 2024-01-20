@@ -75,8 +75,8 @@ button:hover {
 }
 
 .box {
-    width: 20vw;
-    height: 60vh;
+    width: 22vw;
+    height: 70vh;
     border-radius: 0.5rem;
     box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
     background-color: transparent;
@@ -194,6 +194,14 @@ button:hover {
     color: rgb(43, 79, 81);
 }
 
+#humidityRange {
+    text-align: center;
+    margin-top: 0.3rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: black;
+}
+
 #weathericon {
     height: 50%;
     display: flex;
@@ -273,7 +281,7 @@ img {
 
 
 .desc-container span {
-    font-size: 8rem;
+    font-size: 7.5rem;
     color: white;
 }
 
