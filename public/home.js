@@ -1,7 +1,20 @@
 const getinfo = async () => {
     const cityVal = city.value;
     if(cityVal == '') {
-        message.innerText = "Enter a city name before search";
+        Swal.fire({
+            title: 'Please Enter City Name',
+            text: 'Enter a city name before search',
+            icon: 'error',
+            toast:'true',
+            showConfirmButton:false,
+            timer:4000,
+            timerProgressBar:true,
+            position:"bottom-end",
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+              }
+          });
         box.style.display = 'none';
     }
     else {
@@ -32,7 +45,20 @@ const getinfo = async () => {
             }
 
         } catch (error) {
-            message.innerText = "Enter valid city name";
+            Swal.fire({
+                title: 'Wrong City Name',
+                text: 'Enter valid city name',
+                icon: 'error',
+                toast:'true',
+                showConfirmButton:false,
+                timer:4000,
+                timerProgressBar:true,
+                position:"bottom-end",
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                  }
+              });
             box.style.display = 'none';
         }
     }
