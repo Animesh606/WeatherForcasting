@@ -26,10 +26,13 @@ const getinfo = async () => {
             spanLocation.innerText = `${objdata.name}, ${objdata.sys.country}`;
             temp.innerHTML = `${objdata.main.temp}&deg;C`;
             rangetemp.innerHTML = `Min ${objdata.main.temp_min}&deg;C | Max ${objdata.main.temp_max}&deg;C`;
+            // {console.log(objdata.main.humidity)}
+            humidityRange.innerHTML = `Humidity: ${objdata.main.humidity}% | Air Pressure: ${objdata.main.pressure}mb`;
             box.style.display = 'block';
             message.innerText = '';
             const weather = objdata.weather[0].main;
             let videoBtn = document.querySelector('video');
+            {console.log(weather)}
             if(weather == 'Clouds') {
                 weathericon.innerHTML = `<i class="fa-solid fa-cloud fa-beat" style="color : black"></i>`;
                 videoBtn.setAttribute('src' , 'Cloudy.mp4');
