@@ -8,7 +8,7 @@ const app = express();
 app.set("view engine" , "ejs");
 app.use(express.static(__dirname + '/public'));
 
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 app.get("/",(req, res) => {
         res.status(200).render("home")
     }
@@ -25,4 +25,6 @@ app.use((req,res,next)=>{
     res.send('<h1> Error 404 <\h1>');
 })
 
-app.listen(port, "127.0.0.1");
+app.listen(port, () => {
+        console.log(`Server is listening on ${port}`);
+});
