@@ -12,10 +12,23 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="/weather-forecast.png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <title>Weather Forecasting</title>
 </head>
 
 <body>
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-icon-container">
+            <i class="bx bx-cookie"></i> <!-- Cookie Icon -->
+            <span>Cookies Consent</span> <!-- Text beside the icon -->
+        </div>
+        <p>This website uses cookies to ensure you get the best experience on our website. <a href="#" style="color: #f8f393;">Learn more</a></p>
+        <div class="cookie-buttons">
+            <button onclick="acceptCookies()">Accept</button>
+            <button onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+    
     <div class="main-container">
         <video src="rain.mp4" autoplay muted loop></video>
         <div class="container">
@@ -82,6 +95,41 @@
 
     <script src="home.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    (function(){
+      emailjs.init("WB9rAyWwwLZube-er");
+    })();
+
+    // Check if the user has accepted or declined cookies
+if (!document.cookie.includes("cookieConsentAccepted") && !document.cookie.includes("cookieConsentDeclined")) {
+   showCookieConsent();
+}
+
+// Function to show the cookie consent popup
+function showCookieConsent() {
+   var cookieConsent = document.getElementById("cookieConsent");
+   cookieConsent.style.display = "flex";
+}
+
+// Function to accept cookies and hide the popup
+function acceptCookies() {
+   var cookieConsent = document.getElementById("cookieConsent");
+   cookieConsent.style.display = "none";
+
+   // Set a cookie to remember that the user has accepted cookies
+   document.cookie = "cookieConsentAccepted=true; max-age=" + 60 * 60 * 24 * 30; // Set to expire in 30 days
+}
+
+// Function to decline cookies and hide the popup
+function declineCookies() {
+   var cookieConsent = document.getElementById("cookieConsent");
+   cookieConsent.style.display = "none";
+
+   // Set a cookie to remember that the user has declined cookies
+   document.cookie = "cookieConsentDeclined=true; max-age=" + 60 * 60 * 24 * 30; // Set to expire in 30 days
+}
+
+  </script>
 </body>
 
 </html>
